@@ -1,6 +1,3 @@
-import { model } from "mongoose";
-
-
 if(process.env.NODE_ENV){
     module.exports = require('./prod');
 }
