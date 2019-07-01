@@ -18,7 +18,7 @@ app.use(Cookie({
 app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/authRoutes')(app);
-
+// local development links:
 // localhost:5000/auth/google
 // localhost:5000/api/cuser
 

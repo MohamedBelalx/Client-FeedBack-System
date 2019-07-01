@@ -19,9 +19,3 @@ app.get('/api/cuser',(req,res)=>{
 });
 
 };
-// Client Token
-// for production build :
-// 884136047793-s5kteucp2ped5sdv69edgljigp1qb40b.apps.googleusercontent.com
-
-// Client secret Token :
-// VhQXCPqdWH6bbgZTySb-BprR
