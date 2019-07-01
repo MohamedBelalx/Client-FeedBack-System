@@ -17,7 +17,7 @@ passport.use(new GoogleStrategy(
     {
         clientID : keys.googleClientID,
         clientSecret : keys.googleClientSecret,
-        callbackURL: 'https://young-anchorage-35828.herokuapp.com/auth/google/callback',
+        callbackURL: '/auth/google/callback',
         proxy: true
     }, 
     (accesToken,refreshToken,profile,done) => {
