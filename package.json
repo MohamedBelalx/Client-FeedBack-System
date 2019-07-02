@@ -4,8 +4,8 @@
   "description": "feedback client project",
   "main": "index.js",
   "engines": {
-    "node": "8.9.0",
-    "npm": "5.5.1"
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "scripts": {
     "start": "node index.js"
@@ -18,5 +18,8 @@
     "mongoose": "^5.6.2",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "npx": "^10.2.0"
   }
 }
