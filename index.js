@@ -9,7 +9,7 @@ require('./services/passport');
 const keys = require('./config/keys');
 
 
-mongoose.connect(keys.DBURI);
+mongoose.connect(keys.DBURI, {useNewUrlParser: true});
 
 app.use(Cookie({
     maxAge:30 * 24 * 60 * 60 *1000,

@@ -20,18 +20,14 @@ passport.use(new GoogleStrategy(
         callbackURL: '/auth/google/callback',
         proxy: true
     }, 
-    (accesToken,refreshToken,profile,done) => {
+    async (accesToken,refreshToken,profile,done) => {
         console.log('profile info:',profile);
-        User.findOne({googleId:profile.id}).then(exUser=>{
-            if(exUser){
-                done(null,exUser);
-            }else{
-                new User({googleId:profile.id,name:profile.displayName}).save()
-                .then(user=>{
-                    done(null,user);
-                });
-            }
-        });
-        
-    })
+        const exUser = await User.findOne({googleId:profile.id});
+        if(exUser){
+            return done(null,exUser);
+        }     
+        const user =  await new User({googleId:profile.id,name:profile.displayName}).save();
+        done(null,user);      
+        }
+    )
 );
