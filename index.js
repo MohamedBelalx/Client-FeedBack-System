@@ -3,6 +3,7 @@ const app = express();
 const Cookie = require('cookie-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 require('./models/User');
 require('./services/passport');
@@ -11,6 +12,8 @@ const keys = require('./config/keys');
 
 mongoose.connect(keys.DBURI, {useNewUrlParser: true});
 
+app.use(bodyParser.json());
+
 app.use(Cookie({
     maxAge:30 * 24 * 60 * 60 *1000,
     keys:[keys.CookieToken]
@@ -18,6 +21,7 @@ app.use(Cookie({
 app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/authRoutes')(app);
+require('./routes/paymentRoutes')(app);
 // local development links:
 // localhost:5000/auth/google
 // localhost:5000/api/cuser
