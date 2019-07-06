@@ -22,6 +22,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/paymentRoutes')(app);
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'));
+
+    const path = require('path');
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve('__dirname','client','build','index.html'));
+    })
+}
 // local development links:
 // localhost:5000/auth/google
 // localhost:5000/api/cuser
