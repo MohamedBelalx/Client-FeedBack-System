@@ -8,7 +8,6 @@ export const fetchUser = ()=> async (dispatch) =>{
             type:FETCH_USER,
             payload:res.data
         });
-        console.log(res.data.name);
         
     }
   

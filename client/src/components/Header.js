@@ -24,7 +24,6 @@ class Header extends Component{
       }
     }
     render(){
-      console.log(this.props.auth)
         return(
             <nav className='nav-warpper blue darken-1'>
               <div className="container">
