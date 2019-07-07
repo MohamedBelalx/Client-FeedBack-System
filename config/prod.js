@@ -4,6 +4,7 @@ module.exports = {
     CookieToken:process.env.COOKIE_TOKEN ,
     stripePublishKey:process.env.STRIPE_PUBLISH_KEY,
     stripeSecretToken:process.env.STRIPE_SECRET_TOKEN,
+    sendGridKey:process.env.SEND_GRID_KEY,
     DBURI:process.env.DB_URI
     
 }
