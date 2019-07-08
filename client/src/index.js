@@ -6,6 +6,9 @@ import App from './components/App';
 import reducers from './reducers';
 import MaterializeCSS from 'materialize-css/dist/css/materialize.min.css';
 import reduxThunk from 'redux-thunk';
+import axios from 'axios';
+
+window.axios = axios;
 
 
 const store = createStore(reducers,{},applyMiddleware(reduxThunk));
@@ -15,3 +18,10 @@ ReactDom.render(
     document.getElementById('root')
 );
 
+/*
+const surveys = { title:'test',subject:'test',body:'testmail',targets:'hero.armna@gmail.com' }
+
+
+
+axios.post('/api/surveys',surveys);
+*/
